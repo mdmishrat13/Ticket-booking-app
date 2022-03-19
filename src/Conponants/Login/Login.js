@@ -46,7 +46,7 @@ const Login = () => {
           </form>
           <p className={styles.authRedirect}>New user? <Link to="/register">Register here</Link></p>
           <div className={styles.socialLogin}>
-          <FontAwesomeIcon className={styles.socialLoginIcons} icon="fa-brands fa-facebook" />
+          <FontAwesomeIcon icon="fa-brands fa-facebook"/>
           <p>Login with google</p>
 
           </div>
