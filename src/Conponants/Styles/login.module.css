@@ -40,3 +40,15 @@
     padding: 1.5rem 0;
     font-weight: 500;
 }
+.authRedirect{
+  text-align: center;
+}
+.socialLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socialLoginIcons{
+  font-size: 2.5rem;
+  color: black;
+}

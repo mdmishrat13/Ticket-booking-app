@@ -1,4 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import useFirebase from "../Hooks/useFirebase";
 import styles from "./../Styles/login.module.css";
 
@@ -42,7 +44,13 @@ const Login = () => {
               </div>
               
           </form>
-          <button onClick={googleSignIn}>login</button>
+          <p className={styles.authRedirect}>New user? <Link to="/register">Register here</Link></p>
+          <div className={styles.socialLogin}>
+          <FontAwesomeIcon className={styles.socialLoginIcons} icon="fa-brands fa-facebook" />
+          <p>Login with google</p>
+
+          </div>
+          
         </div>
       </div>
     </div>
