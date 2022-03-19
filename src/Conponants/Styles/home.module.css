@@ -1,0 +1,48 @@
+
+header{
+    margin-top: -80px;
+}
+.headerImage{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(https://i.ibb.co/94Z9SfR/maldives-1993704.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: change 60s infinite ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+.headerContent{
+    opacity: 100;
+    color: black;
+};
+
+@media only screen and (max-width: 992px) {
+    .headerImage{
+        margin-top: 0;
+    }
+}
+@keyframes change {
+    0%{
+        background-image: url(https://i.ibb.co/mhZzbgF/hallstatt-3609863.jpg);
+    }
+    20%{
+        background-image: url(https://i.ibb.co/9Y1df3J/island-3542290.jpg);
+    }
+    40%{
+        background-image: url(https://i.ibb.co/mhZzbgF/hallstatt-3609863.jpg);
+    }
+    60%{
+        background-image: url(https://i.ibb.co/94Z9SfR/maldives-1993704.jpg);
+    }
+    80%{
+        background-image: url(https://i.ibb.co/mhZzbgF/hallstatt-3609863.jpg);
+    }
+    100%{
+        background-image: url(https://i.ibb.co/hLSf0F1/road-5904909.jpg);
+    }
+}

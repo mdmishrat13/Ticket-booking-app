@@ -1,0 +1,42 @@
+.loginArea{
+   margin-top: 10px;
+}
+.loginForm {
+  max-width: 750px;
+  background-color: white;
+  margin: auto;
+}
+.formStyle{
+    padding: 0 10px;
+}
+
+.inpunField {
+  margin: 10px 0;
+  display: block;
+  padding: 0.4rem 10px;
+  width: 730px;
+  font-size: 18px;
+}
+.loginBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submitBtn {
+    margin-bottom: 1rem;
+  width: 100%;
+  padding: .7rem 0;
+  background-color: rgb(111, 41, 240);
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+
+}
+.authTitle{
+    text-align: center;
+    padding: 1.5rem 0;
+    font-weight: 500;
+}

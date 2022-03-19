@@ -1,0 +1,61 @@
+.loginArea{
+    margin-top: 10px;
+ }
+ .loginForm {
+   max-width: 750px;
+   background-color: white;
+   margin: auto;
+ }
+ .formStyle{
+     padding: 0 10px;
+ }
+ .inputNames {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .firstName label {
+   display: block;
+ }
+ .firstName input {
+   display: block;
+   padding: 2rem;
+ }
+ .inputName {
+   margin: 10 0;
+   display: block;
+   padding: 0.4rem 10px;
+   width: 350px;
+   font-size: 18px;
+ }
+ .inpunField {
+   margin: 10px 0;
+   display: block;
+   padding: 0.4rem 10px;
+   width: 730px;
+   font-size: 18px;
+ }
+ .submitBtns {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+ .submitBtn {
+   margin: 1rem;
+   padding: .7rem 5rem;
+   background-color: rgb(111, 41, 240);
+   color: black;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+   font-size: 18px;
+   color: white;
+ 
+ }
+ .authTitle{
+     text-align: center;
+     padding: 1.5rem 0;
+     font-weight: 500;
+ }
+ 

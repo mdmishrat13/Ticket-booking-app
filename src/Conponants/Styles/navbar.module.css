@@ -1,0 +1,94 @@
+
+
+.navItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoTitle{
+    padding-left: 20px;
+    color: white;
+}
+.logosection{
+    display: flex;
+}
+.pages{
+    list-style: none;
+    display: flex;
+}
+.logosection a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+}
+.loginButtons{
+    display: flex;
+    align-items: center;
+}
+
+.loginBtn{
+    text-decoration: none;
+    padding: .8rem 2rem;
+    border: 1px solid white;
+    color: white;
+    margin-right: 1rem;
+    border-radius: 5px;
+}
+.loginBtn:hover{
+    color:  rgb(111, 41, 240);
+    background-color: white;
+    font-weight: 500;
+}
+.signupBtn{
+    text-decoration: none;
+    padding: .8rem 2rem;
+    border: 1px solid white;
+    color: white;
+    margin: .4rem 0;
+    border-radius: 5px;
+}
+.signupBtn:hover{
+    color:  rgb(111, 41, 240);
+    background-color: white;
+    font-weight: 500;
+}
+.menuIcon{
+    display: none;
+}
+
+.closeMenuIcon{
+    display: none;
+}
+
+/* necessary media quary  */
+@media only screen and (max-width: 992px) {
+    .pages{
+        display: none;
+    }
+    .loginButtons{
+        display: none;
+    }
+    .menuIcon{
+        display: block;
+        font-size:1.5rem;
+        color: white;
+        margin-right: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .loginBtn{
+        margin-right: 0;
+    }
+    .signupBtn{
+        margin-bottom: 4rem;
+    }
+    .closeMenuIcon{
+        font-size:1.5rem;
+        color: white;
+        display: block;
+        margin-right: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
+}

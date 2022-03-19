@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+body {
+  background-color: rgb(240, 233, 255);
+}
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 992px;
+  margin: auto;
+}
+.hidden {
+  display: none;
+}
+/* .smallPages{
+    display: none;
+} */
+
+/* for homepage  */
+.position {
+  position: sticky;
+  top: 0;
+}
+.navColor {
+  background-color: rgb(111, 41, 240);
+}
+.navTransparent {
+  background-color: transparent;
+}
+.hideSmallPages {
+  display: none;
+}
+.smallpages{
+    display: none;
+}
+
+/* css for homepage  */
+#headerTitle{
+  color:rgb(247, 236, 234);
+  text-shadow: 2px 2px 2px black;
+  font-weight: 500;
+  display: flex;
+}
+#headerTitle span{
+  color: tomato;
+}
+#headerText{
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.typewritting{
+  display: inline-block;
+}
+
+
+
+/* hotel css  */
+.hotelInfo{
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.hotelContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-radius: 5px;
+
+}
+
+.hotelContainer img{
+  border: 1px solid #121212;
+  border-radius: 2px;
+}
+.hotelTexts{
+  padding-left: 1rem;
+  display: grid;
+  /* justify-content: center; */
+  align-items: center;
+}
+.hotelTexts li{
+ list-style: none;
+ color: orange;
+}
+.moreImages{
+  max-width: 5rem;
+  display: flex;
+  padding-bottom: 2rem;
+}
+.moreImages img{
+  margin-left: 2rem;
+}
+.moreImages img:hover{
+  border: 1px solid  rgb(111, 41, 240);
+}
+.feedback{
+  display: flex;
+  justify-content: space-evenly;
+}
+.feedback strong{
+  display: block;
+  margin-bottom: 1rem;
+}
+.rattings p{
+  color: orange;
+}
+.cost{
+  color: red;
+}
+.pageNavSpace{
+  height: 70px;
+  background-color:rgb(111, 41, 240) ;
+  margin-top: -69px;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .smallpages {
+    display: block;
+    text-align: center;
+  }
+  .smallpages a{
+      display: block;
+      text-decoration: none;
+      padding: .5rem 0;
+      color: white;
+  }
+  .navTransparent {
+      background-color: rgb(111, 41, 240) ;
+  }
+}
