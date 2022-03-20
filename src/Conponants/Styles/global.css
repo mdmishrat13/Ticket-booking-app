@@ -65,7 +65,12 @@ img {
 
 
 /* hotel css  */
+.hotelImage>img{
+  width: 400px;
+  height: 300px;
+}
 .hotelInfo{
+  padding: 10px;
   margin-bottom: 1rem;
   background-color: #fff;
 }
@@ -123,6 +128,8 @@ img {
   background-color:rgb(111, 41, 240) ;
   margin-top: -69px;
 }
+/* hotel page  */
+
 
 
 @media only screen and (max-width: 992px) {

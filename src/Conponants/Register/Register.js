@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./../Styles/register.module.css";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const Login = () => {
+  const [userData,setUserData]= useState({})
+  const getUserInput = e=>{
+    const {name,value}= e.target;
+    setUserData({...userData, [name]:value})
+    console.log(userData)
+  }
+  const handleSubmit = e=>{
+    e.preventDefault();
+    alert('form submitted')
+  }
   return (
     <div>
-        <div className="pageNavSpace">
-
-        </div>
+      <div className="pageNavSpace"></div>
       <div className={styles.loginArea}>
         <div className={styles.loginForm}>
           <h1 className={styles.authTitle}>Please Register Here</h1>
-          <form className={styles.formStyle}>
+          <form onSubmit={handleSubmit} className={styles.formStyle }>
             <div className={styles.inputNames}>
               <div className="firstName">
                 <label htmlFor="inputNamef">First Name</label>
                 <input
+                onBlur={getUserInput}
                   type="Text"
                   name="firstName"
                   className={styles.inputName}
@@ -35,6 +48,7 @@ const Login = () => {
             </div>
             <label htmlFor="email">Your Email</label>
             <input
+            onBlur={getUserInput}
               placeholder="john@smith.com"
               type="email"
               name="email"
@@ -43,6 +57,7 @@ const Login = () => {
             />
             <label htmlFor="img">Your Profile Pic Link</label>
             <input
+            onBlur={getUserInput}
               placeholder="https://www.picbay.com/img"
               type="text"
               name="img"
@@ -51,9 +66,10 @@ const Login = () => {
             />
             <label htmlFor="password1">Choose A Password</label>
             <input
+            onBlur={getUserInput}
               placeholder="**********"
               type="password"
-              name="password1"
+              name="password"
               className={styles.inpunField}
               id="password1"
             />
@@ -67,7 +83,7 @@ const Login = () => {
             />
             <div className={styles.submitBtns}>
               <input
-              style={{backgroundColor:'tomato'}}
+                style={{ backgroundColor: "tomato" }}
                 type="reset"
                 className={styles.submitBtn}
                 name="Clear All"
@@ -79,6 +95,35 @@ const Login = () => {
               />
             </div>
           </form>
+          <div className={styles.otherLink}>
+          <div className={styles.socialLogin}>
+            <p>Already Registered? <Link to="/login">Login Here</Link></p>
+            <p>Or</p>
+              <button
+                style={{
+                  fontSize: "18px",
+                  color: "white",
+                  backgroundColor: "green",
+                  border: 0,
+                  borderRadius: "5px",
+                  padding: ".7rem 2rem",
+                  margin: "2rem 0",
+                  cursor:'pointer'
+                }}
+              >
+                {" "}
+                <FontAwesomeIcon
+                  style={{
+                    fontSize: "20px",
+                    color: "white",
+                    marginRight: "10px",
+                  }}
+                  icon={faGoogle}
+                />
+                Login With Google
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
