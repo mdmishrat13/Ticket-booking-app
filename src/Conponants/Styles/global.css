@@ -11,6 +11,17 @@ body {
 img {
   max-width: 100%;
 }
+.text-center{
+  text-align: center;
+}
+.btn{
+  padding: .7rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(111, 41, 240);
+  color: white;
+  cursor: pointer;
+}
 
 .container {
   max-width: 992px;
@@ -46,7 +57,7 @@ img {
   color:rgb(247, 236, 234);
   text-shadow: 2px 2px 2px black;
   font-weight: 500;
-  display: flex;
+  display:flex;
 }
 #headerTitle span{
   color: tomato;
@@ -59,9 +70,22 @@ img {
 }
 
 .typewritting{
-  display: inline-block;
+  display: inline;
+}
+.card{
+  background-color: white;
+  padding: .5rem;
 }
 
+/* #location{
+  text-align: center;
+  margin-top: -400px;
+  width: 400px;
+    display: inline;
+    padding: .7rem 1rem;
+    border-radius: 5px;
+    border: none;
+} */
 
 
 /* hotel css  */
