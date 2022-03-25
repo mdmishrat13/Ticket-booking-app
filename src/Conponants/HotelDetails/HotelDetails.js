@@ -80,8 +80,8 @@ const HotelDetails = () => {
                 <Link to="comments">Comments</Link>
                 <Link to="facilities">Facilities</Link>
                 <Link to="conditions">Conditions</Link>
+                <Outlet/>
               </div>
-              <Outlet />
             </div>
           </div>
         </div>

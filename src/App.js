@@ -21,14 +21,14 @@ function App() {
       <BrowserRouter>
           <Navbar></Navbar>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route index path="/home" element={<Home />} />
             <Route path="/hotels" element={<Hotels />} />
-            <Route path="/hotels/:id/*" element={<HotelDetails/>} >
-                <Route path="/details" element={<Details />} />
-                <Route path="/comments" element={<Comments />} />
-                <Route path="/facilities" element={<Facilities />} />
-                <Route path="/conditions" element={<Conditions />} />
+            <Route path="/hotels/:id" element={<HotelDetails/>} >
+                <Route index element={<Details />} />
+                <Route path="details" element={<Details />} />
+                <Route path="comments" element={<Comments />} />
+                <Route path="facilities" element={<Facilities />} />
+                <Route path="conditions" element={<Conditions />} />
             </Route>
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/about" element={<About />} />
