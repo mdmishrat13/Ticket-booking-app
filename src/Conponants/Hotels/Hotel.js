@@ -2,10 +2,12 @@ import { faImages } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import { faLocationDot, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 // import styles from './../Styles/hotels.module.css';
 
 const Hotel = ({ hotel }) => {
   const {
+    id,
     name,
     costPerNight,
     reviews,
@@ -66,7 +68,7 @@ const Hotel = ({ hotel }) => {
             <h2>
               Cost:<span className="cost">{costPerNight}</span>
             </h2>
-            <button
+            <Link to={`${id}/`}
               style={{
                 fontSize: "15px",
                 color: "white",
@@ -79,7 +81,7 @@ const Hotel = ({ hotel }) => {
               }}
             >
               See Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
