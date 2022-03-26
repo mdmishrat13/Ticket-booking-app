@@ -1,4 +1,5 @@
 import React from "react";
+import './../Styles/global.css'
 import { Link, Outlet, Route, Routes, useParams } from "react-router-dom";
 import styles from "./../Styles/hoteldetails.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -75,15 +76,15 @@ const HotelDetails = () => {
               >
                 Book Now
               </button>
-              <div className="links">
+            </div>
+          </div>
+          <div className="links">
                 <Link to="details">Details</Link>
                 <Link to="comments">Comments</Link>
                 <Link to="facilities">Facilities</Link>
                 <Link to="conditions">Conditions</Link>
                 <Outlet/>
               </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
