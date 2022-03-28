@@ -6,23 +6,29 @@ import styles from "./../Styles/login.module.css";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const Login = () => {
-  const { googleSignIn, user } = useFirebase();
+  const {error, uaer,googleSignIn,loading,emailPasswordSignIn } = useFirebase();
   const [userData, setUserData]=useState({})
 
+  let email;
+  let pass;
+
   const getUserInput= (e)=>{
-    const {name, value} = e.target;
-    setUserData({...userData, [name]: value});
-    console.log(userData)
+    email = e.target.value;
+    pass= e.target.value;
+    // const {name, value} = e.target;
+    // setUserData({...userData, [name]: value});
+    // console.log(userData)
   }
   const handleSubmit= e=>{
+    emailPasswordSignIn(email,pass)
     e.preventDefault();
-    alert('submitted')
   }
     return (
     <div>
       <div className="pageNavSpace"></div>
       <div className={styles.loginArea}>
         <div className={styles.loginForm}>
+          <p>{error}</p>
           <h1 className={styles.authTitle}>Please Login Here</h1>
           <form className={styles.formStyle} onSubmit={handleSubmit}>
             <label htmlFor="email">Your Email</label>
@@ -61,6 +67,7 @@ const Login = () => {
             </p>
             <div className={styles.socialLogin}>
               <button
+              onClick={googleSignIn}
                 style={{
                   fontSize: "18px",
                   color: "white",

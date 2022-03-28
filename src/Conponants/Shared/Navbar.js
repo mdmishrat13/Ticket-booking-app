@@ -3,14 +3,14 @@ import styles from "./../Styles/navbar.module.css";
 import "./../Styles/global.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars,faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../Hooks/useAuth";
-import useFirebase from "../Hooks/useFirebase";
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const {user} = useFirebase();
+  const { user, logOut, googleSignIn, loading } = useAuth();
+  console.log(user.photoURL)
 
   const handleScroll = () => {
     if (window.scrollY >= 70) {
@@ -24,7 +24,7 @@ const Navbar = () => {
   });
 
   return (
-    <div className='position'>
+    <div className="position">
       <nav className={scroll ? "navColor" : "navTransparent"}>
         <div className="container">
           <div className={styles.navItems}>
@@ -49,27 +49,41 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            <div className={styles.loginButtons}>
-              <Link className={styles.loginBtn} to="/login">
-                {" "}
-                Login{" "}
-              </Link>
-              <Link className={styles.signupBtn} to="/register">
-                {" "}
-                SignUp{" "}
-              </Link>
-            </div>
-            {clicked?<FontAwesomeIcon
-              onClick={() => setClicked(!clicked)}
-              className={styles.closeMenuIcon}
-              icon={faXmark}
-            />
-            :<FontAwesomeIcon
-              onClick={() => setClicked(!clicked)}
-              className={styles.menuIcon}
-              icon={faBars}
-            />}
-            
+            {user?.email ? (
+              <div style={{display:'flex',alignItems:'center'}} className="logedin">
+                <button onClick={logOut} className="btn">
+                  Logout
+                </button>
+                <div className="img">
+                  <img style={{width:'20px',borderRadius:'50%'}}src={user?.photoURL} alt="" />
+                  {/* <span>{user?.displayName} </span> */}
+                </div>
+              </div>
+            ) : (
+              <div className={styles.loginButtons}>
+                <Link className={styles.loginBtn} to="/login">
+                  {" "}
+                  Login{" "}
+                </Link>
+                <Link className={styles.signupBtn} to="/register">
+                  {" "}
+                  SignUp{" "}
+                </Link>
+              </div>
+            )}
+            {clicked ? (
+              <FontAwesomeIcon
+                onClick={() => setClicked(!clicked)}
+                className={styles.closeMenuIcon}
+                icon={faXmark}
+              />
+            ) : (
+              <FontAwesomeIcon
+                onClick={() => setClicked(!clicked)}
+                className={styles.menuIcon}
+                icon={faBars}
+              />
+            )}
           </div>
           <ul className={clicked ? "smallpages" : "hideSmallPages"}>
             <li>
@@ -92,7 +106,7 @@ const Navbar = () => {
                 Login{" "}
               </Link>
             </li>
-            <li style={{paddingBottom:'.2rem'}}>
+            <li style={{ paddingBottom: ".2rem" }}>
               <Link className={styles.signupBtn} to="/register">
                 {" "}
                 Signup{" "}

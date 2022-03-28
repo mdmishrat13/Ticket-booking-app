@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import About from "./Conponants/About/About";
 import AuthProvider, { AuthContext } from "./Conponants/contexts/AuthProvider/AuthProvider";
 import Dashboard from "./Conponants/Dashboard/Dashboard/Dashboard";
@@ -28,7 +28,8 @@ function App() {
       <BrowserRouter>
           <Navbar></Navbar>
           <Routes>
-            <Route index path="/home" element={<Home />} />
+            <Route path="/" element={<Navigate to='home'/>}/>
+            <Route path="/home" element={<Home />}/>
             <Route path="/hotels" element={<Hotels />} />
             <Route path="/hotels/:id" element={<HotelDetails/>} >
                 <Route index element={<Details />} />
