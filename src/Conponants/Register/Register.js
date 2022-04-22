@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useAuth from "../Hooks/useAuth";
 
 
-const Login = () => {
+const Register = () => {
   const [userData,setUserData]= useState({
     displayName:'',
     email:'',
@@ -170,4 +170,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
