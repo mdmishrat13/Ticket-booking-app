@@ -10,7 +10,6 @@ const Navbar = () => {
   const [clicked, setClicked] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { user, logOut, googleSignIn, loading } = useAuth();
-  console.log(user.photoURL)
 
   const handleScroll = () => {
     if (window.scrollY >= 70) {

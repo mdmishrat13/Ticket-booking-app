@@ -9,18 +9,15 @@ const Login = () => {
   const {error, uaer,googleSignIn,loading,emailPasswordSignIn } = useFirebase();
   const [userData, setUserData]=useState({})
 
-  let email;
-  let pass;
-
   const getUserInput= (e)=>{
-    email = e.target.value;
-    pass= e.target.value;
-    // const {name, value} = e.target;
-    // setUserData({...userData, [name]: value});
-    // console.log(userData)
+    const email = e.target.value;
+    const pass= e.target.value;
+    const {name, value} = e.target;
+    setUserData({...userData, [name]: value});
+    console.log(userData)
   }
   const handleSubmit= e=>{
-    emailPasswordSignIn(email,pass)
+    emailPasswordSignIn(userData.email, userData.password)
     e.preventDefault();
   }
     return (

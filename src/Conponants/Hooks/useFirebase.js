@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
   GoogleAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Login/firebase.init";
@@ -19,10 +20,11 @@ const useFirebase = () => {
   const [error,setError]= useState('')
   const auth = getAuth();
 
-  const createUserWithEmail = (email, password) => {
+  const createUserWithEmail = (email, password,displayName) => {
     setLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
+    addName(displayName)
     // Signed in 
     const user = userCredential.user;
     // ...
@@ -74,6 +76,11 @@ const useFirebase = () => {
       })
       .finally(setLoading(false));
   };
+  const addName = displayName=>{
+    updateProfile(auth.currentUser,{
+      displayName:displayName
+    })
+  }
 
   useEffect(() => {
     setLoading(true)
